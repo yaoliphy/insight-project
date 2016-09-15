@@ -1,7 +1,7 @@
 *.db
 *.pdf
 *.jpg
-data_analysis_and_ML/demo_02_data_analysis_ML.ipynb
+demo_02_data_analysis_ML.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
