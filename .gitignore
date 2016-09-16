@@ -2,6 +2,7 @@
 *.pdf
 *.jpg
 *.png
+*.npy
 demo_02_data_analysis_ML.ipynb
 
 # Byte-compiled / optimized / DLL files
