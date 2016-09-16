@@ -70,21 +70,25 @@ def compute_image_features(img_name, video_title):
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
+        # add video title
+        # title = request.form['text']
+
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file', filename=filename))
+            return redirect(url_for('prediction_advice', filename=filename))
     return render_template("input.html")
  
 
 @app.route('/show/<filename>')
-def uploaded_file(filename):
+def prediction_advice(filename, title):
     #filename = 'http://127.0.0.1:5000/uploads/' + filename
     filename = "/Users/yaoli/02_JobApplications/03_DataScience/insight/project/websites/web_vblog_diagose/static/img/" + filename
 
     #######################
     # input
-    video_title = "DRUGSTORE BACK TO SCHOOL MAKEUP TUTORIAL" # should be input
+    #video_title = "DRUGSTORE BACK TO SCHOOL MAKEUP TUTORIAL" # should be input
+    video_title = "Philadelphia"
     image_feature = compute_image_features(filename, video_title)
 
     #######################
