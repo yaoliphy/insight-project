@@ -3,6 +3,7 @@
 *.jpg
 *.png
 *.npy
+*.pkl
 *.txt
 demo_02_data_analysis_ML.ipynb
 
