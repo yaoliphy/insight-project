@@ -107,6 +107,13 @@ def get_enhanced_image(file_name, video_title, clf, common_words):
     x_sample = array(features_before).reshape(1, -1)
     prob_before = clf.predict_proba(x_sample)[0, 1] #probability of being popular
     
+    if prob_before < 0.5:
+        message = "The impact may not be high."
+    else:
+        message = "The impact is going to be high."
+    return message
+    
+    '''
     #itr = [1, 1.05, 1.1, 1.15]
     itr = [1, 1.05, 1.1, 1.15, 1.2]
     #itr = [0.9, 1, 1.1, 1.2, 1.3
@@ -131,12 +138,13 @@ def get_enhanced_image(file_name, video_title, clf, common_words):
                     prob_best = prob_after
                     filter_best = [i, j, k]
     if prob_best == prob_before:
-        message = "The high-impact chance is already very high: {0}%. So your thumbnail image is kept.".format(100*prob_best)
+        message = "The high-impact chance is already very high. So your thumbnail image is kept."
         img_best = img_format
     else:
-        message = "The chance of high impact can be improved from {0}% to {1}% by changing color by {2}, brightness by {3}, and contrast by {4}".format(100*prob_before, 100*prob_best, filter_best[0], filter_best[1], filter_best[2])
+        message = "The chance of high impact can be improved from {0}% to {1}% by changing saturation by {2}, brightness by {3}, and contrast by {4}".format(100*prob_before, 100*prob_best, filter_best[0], filter_best[1], filter_best[2])
 
     return (message, img_best)
+    '''
 
 
 
@@ -173,6 +181,10 @@ def output():
     img_name = file.filename
     video_title = title
 
+    message = get_enhanced_image(img_name, video_title, clf, common_words)
+    return render_template("output.html", message=message)
+
+    '''
     enhanced_img = get_enhanced_image(img_name, video_title, clf, common_words)
     message = enhanced_img[0]
     img_enchance = enhanced_img[1]
@@ -184,6 +196,9 @@ def output():
     return render_template("output.html",
                            message=message, name_before=img_name, name_after=img_after_name
                            )
+                           '''
+
+
 
 
 

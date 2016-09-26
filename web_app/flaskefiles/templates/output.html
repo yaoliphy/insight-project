@@ -97,7 +97,7 @@
           <div class="container">
             <div class="carousel-caption">
                 <h1>Diagnosis results:</h1>
-              <p>"{{message}}"</p>
+              <p style="color:white;font-size:20pt">"{{message}}"</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
           </div>
@@ -106,35 +106,37 @@
         
 
     </div><!-- /.carousel -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading"> <span class="text-muted" style="margin-left: 300px">Original image ------> </span></h2>
-          <p class="lead"></p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="{{url_for('static', filename=name_before)}}" alt="image_before">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-            <h2 class="featurette-heading"> <span class="text-muted" style="margin-left: 50px"> ------> Enhanced image</span></h2>
-          <p class="lead"></p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="{{url_for('static', filename=name_after)}}" alt="image_after">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
+    
+    <!-- Marketing messaging and featurettes
+     ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    
+    <div class="container marketing">
+        
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-circle" src="../static/img/makeup_brush_2.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2 style="color:white;font-size:20pt">Tip 1</h2>
+                    <p style="color:white;font-size:18pt">Don't use a too short title.</p>
+                    <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="../static/img/makeup_eye.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2 style="color:white;font-size:20pt">Tip 2</h2>
+                    <p style="color:white;font-size:18pt">A title includes "review" is more likely to become popoular.</p>
+                    <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="../static/img/makeup_table.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h2 style="color:white;font-size:20pt">Tip 3</h2>
+                    <p style="color:white;font-size:18pt">Including "favorites" in your title may not be helpful.</p>
+                    <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    
+    
+    
 
       <!-- /END THE FEATURETTES -->
 
