@@ -112,40 +112,6 @@ def get_enhanced_image(file_name, video_title, clf, common_words):
     else:
         message = "The impact is going to be high."
     return message
-    
-    '''
-    #itr = [1, 1.05, 1.1, 1.15]
-    itr = [1, 1.05, 1.1, 1.15, 1.2]
-    #itr = [0.9, 1, 1.1, 1.2, 1.3
-    prob_best = prob_before
-    img_best = img_format #RGB, not array, image format
-    filter_best = []
-    
-    for i in itr:
-        for j in itr:
-            for k in itr:
-                #print([i, j, k])
-                img_after = ImageEnhance.Color(img_format).enhance(i)
-                img_after = ImageEnhance.Brightness(img_after).enhance(j)
-                img_after_RGB = ImageEnhance.Contrast(img_after).enhance(k) #RGB
-                
-                features_after = get_image_input_features(array(img_after_RGB))
-                features_after = features_after + features_before[6:]
-                x_sample = array(features_after).reshape(1, -1)
-                prob_after = clf.predict_proba(x_sample)[0, 1]
-                if prob_after > prob_best:
-                    img_best = img_after_RGB #RGB
-                    prob_best = prob_after
-                    filter_best = [i, j, k]
-    if prob_best == prob_before:
-        message = "The high-impact chance is already very high. So your thumbnail image is kept."
-        img_best = img_format
-    else:
-        message = "The chance of high impact can be improved from {0}% to {1}% by changing saturation by {2}, brightness by {3}, and contrast by {4}".format(100*prob_before, 100*prob_best, filter_best[0], filter_best[1], filter_best[2])
-
-    return (message, img_best)
-    '''
-
 
 
 #############################################################################################################
@@ -184,19 +150,14 @@ def output():
     message = get_enhanced_image(img_name, video_title, clf, common_words)
     return render_template("output.html", message=message)
 
-    '''
-    enhanced_img = get_enhanced_image(img_name, video_title, clf, common_words)
-    message = enhanced_img[0]
-    img_enchance = enhanced_img[1]
-    img_after_name = "enhanced_" + img_name
-    img_enchance.save(STATIC_FOLDER + img_after_name, 'JPEG')
+@app.route('/example', methods=['GET', 'POST'])
+def example():
 
-    #message = prediction_advice(file.filename, title)
+    message = "Eaxample 1, example 1, example 1"
+    
+    return render_template("output.html", message=message)
 
-    return render_template("output.html",
-                           message=message, name_before=img_name, name_after=img_after_name
-                           )
-                           '''
+
 
 
 

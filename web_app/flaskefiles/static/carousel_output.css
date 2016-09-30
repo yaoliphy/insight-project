@@ -155,6 +155,15 @@ input {
   margin: 10px 0; /* Space out the Bootstrap <hr> more */
 }
 
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#FFFF00;
+  height: 1px;
+}
+
 /* Thin out the marketing headings */
 .featurette-heading {
   font-weight: 300;

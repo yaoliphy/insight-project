@@ -5,7 +5,7 @@
 body {
   padding-bottom: 40px;
   color: #5a5a5a;
-  background-color: black;
+  background: url("../static/img/makeup_brush.jpg");
 }
 
 
@@ -36,12 +36,6 @@ body {
 
 /* CUSTOMIZE for my website (by YAO LI)
  -------------------------------------------------- */
-
-body{
-    background-image: url("../static/img/makeup_brush.jpg");
-    background-repeat: repeat-y;
-    
-}
 
 /* center align input */
 input {
@@ -109,18 +103,6 @@ input {
     font-size: 12pt;
 }
 
-.compare_col{
-
-}
-
-.left_img{
-    width: 50%
-}
-
-.right_img{
-    width: 50%
-}
-
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -128,8 +110,8 @@ input {
 
 /* Carousel base class */
 .carousel {
-  height: 660px;
-  margin-bottom: 60px;
+  height: 350px;
+  margin-bottom: 0px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -138,15 +120,16 @@ input {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 660px;
+  height: 350px;
   background-color: #777;
 }
 .carousel-inner > .item > img {
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  top: 100;
   left: 0;
+  right: 0;
   min-width: 100%;
-  height: 660px;
+  height: 350px;
 }
 
 
@@ -155,7 +138,7 @@ input {
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
 }
 .marketing h2 {
@@ -171,7 +154,7 @@ input {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 10px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
